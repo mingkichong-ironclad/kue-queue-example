@@ -1,1 +1,1 @@
-# kue-example
+# kue-queue-example
