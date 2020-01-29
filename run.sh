@@ -1,2 +1,2 @@
 tsc
-node ./compiled/queue
+node ./compiled/process
