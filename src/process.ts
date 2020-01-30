@@ -1,6 +1,6 @@
 import { queue, jobType, invertPriorities } from './queue';
 
-const TIMEOUT_DURATION = 500;
+const TIMEOUT_DURATION = 100;
 
 queue.process(jobType, function(job, done) {
   setTimeout(() => {
