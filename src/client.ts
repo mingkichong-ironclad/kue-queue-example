@@ -23,8 +23,8 @@ const data = getMockData(thisFileName);
 const priority = prioritiesKeys[Math.floor(Math.random() * prioritiesKeys.length)];
 console.log("Job with", priority, "priority sent data", data, "\n");
 
-queue.create(jobType, data).priority(priority).save()
-.on('enqueue', function(result) {
+const job = queue.create(jobType, data).priority(priority).save();
+job.on('enqueue', function(result) {
   console.log('Enqueued');
   process.exit(0);
 })
