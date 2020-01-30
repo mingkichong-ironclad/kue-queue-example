@@ -13,7 +13,7 @@ queue.process(jobType, function(job, done) {
       console.log('FAILED');
       done(new Error(`FAILED`));
     }
-    queue.inactiveCount(function(err, total) {
+    queue.inactiveCount(jobType, function(err, total) {
       console.log(`Remaining items in the queue: ${total}`, "\n");
     });
   }, TIMEOUT_DURATION);
