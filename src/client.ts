@@ -25,30 +25,30 @@ console.log("Job with", priority, "priority sent data", data, "\n");
 
 const job = queue.create(jobType, data).priority(priority).save();
 job.on('enqueue', function(result) {
-  console.log('Enqueued');
+  console.log('enqueued', result);
   process.exit(0);
 })
 .on('complete', function(result) {
-  console.log('Completed');
+  console.log('completed', result);
   process.exit(0);
 })
 .on('failed', function(result) {
-  console.log('failed');
+  console.log('failed', result);
   process.exit(1);
 })
 .on('failed attempt', function(result) {
-  console.log('failed attempt');
+  console.log('failed attempt', result);
   process.exit(1);
 })
 .on('start', function(result) {
-  console.log('start');
+  console.log('start', result);
 })
 .on('remove', function(result) {
-  console.log('remove');
+  console.log('remove', result);
 })
 .on('promotion', function(result) {
-  console.log('promotion');
+  console.log('promotion', result);
 })
 .on('progress', function(result) {
-  console.log('progress');
+  console.log('progress', result);
 });
