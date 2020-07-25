@@ -18,8 +18,10 @@ const states = ['complete', 'failed'];
 (async () => {
   for(const state of states){
     const jobs = await getJobs(state);
+    console.log(`found ${jobs.length} ${state} jobs`);
     jobs.forEach((job)=>{
       console.log(state, 'removed', job.remove().id);
     });
   }
+  process.exit(0);
 })();
